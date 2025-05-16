@@ -1,0 +1,248 @@
+select * from member;
++-----------+------------------+------------+--------+
+| member_id | name             | date       | gender |
++-----------+------------------+------------+--------+
+|         1 | John Smith       | 1990-05-15 | Male   |
+|         2 | Emily Johnson    | 1985-08-22 | Female |
+|         3 | Michael Brown    | 1992-03-10 | Male   |
+|         4 | Sarah Davis      | 1988-11-30 | Female |
+|         5 | David Wilson     | 1995-07-18 | Male   |
+|         6 | Jennifer Miller  | 1991-02-25 | Female |
+|         7 | Robert Taylor    | 1987-09-12 | Male   |
+|         8 | Jessica Anderson | 1993-06-08 | Female |
+|         9 | William Thomas   | 1989-04-17 | Male   |
+|        10 | Amanda Martinez  | 1994-01-20 | Female |
+|        11 | Daniel Jackson   | 1996-12-05 | Male   |
+|        12 | Lisa White       | 1986-10-15 | Female |
++-----------+------------------+------------+--------+
+12 rows in set (0.00 sec)
+
+mysql> select * from Member_Phone;
++--------------+-----------+
+| phone        | member_id |
++--------------+-----------+
+| 555-123-4567 |         1 |
+| 555-987-6543 |         2 |
+| 555-234-5678 |         3 |
+| 555-876-5432 |         4 |
+| 555-345-6789 |         5 |
+| 555-765-4321 |         6 |
+| 555-456-7890 |         7 |
+| 555-654-3210 |         8 |
+| 555-567-8901 |         9 |
+| 555-543-2109 |        10 |
+| 555-678-9012 |        11 |
+| 555-432-1098 |        12 |
++--------------+-----------+
+12 rows in set (0.00 sec)
+
+mysql> select * from staff ;
++----------+-------------------+--------------------+--------+--------------+
+| staff_id | name              | role               | gender | phone        |
++----------+-------------------+--------------------+--------+--------------+
+|      101 | James Wilson      | Head Trainer       | Male   | 555-111-2222 |
+|      102 | Patricia Moore    | Yoga Instructor    | Female | 555-222-3333 |
+|      103 | Richard Lee       | Personal Trainer   | Male   | 555-333-4444 |
+|      104 | Linda Clark       | Pilates Instructor | Female | 555-444-5555 |
+|      105 | Charles Young     | Spin Instructor    | Male   | 555-555-6666 |
+|      106 | Barbara Hall      | Zumba Instructor   | Female | 555-666-7777 |
+|      107 | Joseph Allen      | CrossFit Trainer   | Male   | 555-777-8888 |
+|      108 | Margaret Scott    | Receptionist       | Female | 555-888-9999 |
+|      109 | Thomas King       | Manager            | Male   | 555-999-0000 |
+|      110 | Susan Green       | Swim Instructor    | Female | 555-000-1111 |
+|      111 | Christopher Baker | Boxing Coach       | Male   | 555-121-2121 |
+|      112 | Dorothy Adams     | Nutritionist       | Female | 555-232-3232 |
++----------+-------------------+--------------------+--------+--------------+
+12 rows in set (0.00 sec)
+
+mysql> select * from Membership;
++---------------+-----------+------------+------------+----------+---------+
+| membership_id | member_id | start_date | end_date   | type     | status  |
++---------------+-----------+------------+------------+----------+---------+
+|          1001 |         1 | 2023-01-15 | 2024-01-15 | Premium  | Active  |
+|          1002 |         2 | 2023-02-20 | 2024-02-20 | Standard | Active  |
+|          1003 |         3 | 2023-03-10 | 2024-03-10 | Student  | Active  |
+|          1004 |         4 | 2023-04-05 | 2024-04-05 | Premium  | Active  |
+|          1005 |         5 | 2023-05-12 | 2024-05-12 | Standard | Active  |
+|          1006 |         6 | 2023-06-18 | 2024-06-18 | Student  | Active  |
+|          1007 |         7 | 2023-07-22 | 2024-07-22 | Premium  | Active  |
+|          1008 |         8 | 2023-08-30 | 2024-08-30 | Standard | Active  |
+|          1009 |         9 | 2023-09-14 | 2024-09-14 | Student  | Active  |
+|          1010 |        10 | 2023-10-25 | 2024-10-25 | Premium  | Active  |
+|          1011 |        11 | 2023-11-05 | 2024-11-05 | Standard | Expired |
+|          1012 |        12 | 2023-12-10 | 2024-12-10 | Student  | Active  |
++---------------+-----------+------------+------------+----------+---------+
+12 rows in set (0.00 sec)
+
+mysql> select * from class ;
++----------+------------+--------------------+----------------------+----------+
+| class_id | trainer_id | name               | schedule             | capacity |
++----------+------------+--------------------+----------------------+----------+
+|      201 |        101 | Morning Bootcamp   | Mon/Wed/Fri 6:00 AM  |       20 |
+|      202 |        102 | Yoga Flow          | Tue/Thu 7:00 AM      |       15 |
+|      203 |        103 | Strength Training  | Mon/Wed 5:30 PM      |       12 |
+|      204 |        104 | Pilates Core       | Tue/Thu 6:00 PM      |       10 |
+|      205 |        105 | Spin Class         | Mon/Wed/Fri 7:30 AM  |       15 |
+|      206 |        106 | Zumba Party        | Fri 6:00 PM          |       25 |
+|      207 |        107 | CrossFit WOD       | Tue/Thu/Sat 8:00 AM  |       10 |
+|      208 |        108 | Beginner Yoga      | Sat 9:00 AM          |       12 |
+|      209 |        109 | Senior Fitness     | Mon/Wed/Fri 10:00 AM |       15 |
+|      210 |        110 | Aqua Aerobics      | Tue/Thu 11:00 AM     |       12 |
+|      211 |        111 | Boxing Basics      | Mon/Wed 7:00 PM      |        8 |
+|      212 |        112 | Nutrition Workshop | Sat 11:00 AM         |       30 |
++----------+------------+--------------------+----------------------+----------+
+12 rows in set (0.00 sec)
+
+mysql> select * from Member_book_Class ;
++-----------+----------+--------------+
+| member_id | class_id | booking_date |
++-----------+----------+--------------+
+|         1 |      201 | 2023-10-01   |
+|         1 |      202 | 2023-10-13   |
+|         2 |      202 | 2023-10-02   |
+|         2 |      203 | 2023-10-14   |
+|         3 |      203 | 2023-10-03   |
+|         3 |      204 | 2023-10-15   |
+|         4 |      204 | 2023-10-04   |
+|         5 |      205 | 2023-10-05   |
+|         6 |      206 | 2023-10-06   |
+|         7 |      207 | 2023-10-07   |
+|         8 |      208 | 2023-10-08   |
+|         9 |      209 | 2023-10-09   |
+|        10 |      210 | 2023-10-10   |
+|        11 |      211 | 2023-10-11   |
+|        12 |      212 | 2023-10-12   |
++-----------+----------+--------------+
+15 rows in set (0.00 sec)
+
+mysql> select * from Class_Sessions ;
++------------+----------+--------------+----------+
+| start_time | class_id | session_date | end_time |
++------------+----------+--------------+----------+
+| 06:00:00   |      201 | 2023-11-01   | 07:00:00 |
+| 06:00:00   |      201 | 2023-11-08   | 07:00:00 |
+| 07:00:00   |      202 | 2023-11-02   | 08:00:00 |
+| 07:00:00   |      202 | 2023-11-09   | 08:00:00 |
+| 07:30:00   |      205 | 2023-11-03   | 08:30:00 |
+| 08:00:00   |      207 | 2023-11-04   | 09:00:00 |
+| 09:00:00   |      208 | 2023-11-04   | 10:00:00 |
+| 10:00:00   |      209 | 2023-11-05   | 11:00:00 |
+| 11:00:00   |      210 | 2023-11-05   | 12:00:00 |
+| 11:00:00   |      212 | 2023-11-06   | 12:30:00 |
+| 17:30:00   |      203 | 2023-11-01   | 18:30:00 |
+| 17:30:00   |      203 | 2023-11-08   | 18:30:00 |
+| 18:00:00   |      204 | 2023-11-02   | 19:00:00 |
+| 18:00:00   |      206 | 2023-11-03   | 19:00:00 |
+| 19:00:00   |      211 | 2023-11-06   | 20:00:00 |
++------------+----------+--------------+----------+
+15 rows in set (0.00 sec)
+
+
+
+**Q1: List all members with active memberships, showing their names and membership types.**
+select name , type from member join membership on member.member_id = membership.member_id where status = "Active" ;
++------------------+----------+
+| name             | type     |
++------------------+----------+
+| John Smith       | Premium  |
+| Emily Johnson    | Standard |
+| Michael Brown    | Student  |
+| Sarah Davis      | Premium  |
+| David Wilson     | Standard |
+| Jennifer Miller  | Student  |
+| Robert Taylor    | Premium  |
+| Jessica Anderson | Standard |
+| William Thomas   | Student  |
+| Amanda Martinez  | Premium  |
+| Lisa White       | Student  |
++------------------+----------+
+
+
+**Q2: class that contain the highest capacity**
+ select name , capacity from class order by capacity desc limit 1 ;
++--------------------+----------+
+| name               | capacity |
++--------------------+----------+
+| Nutrition Workshop |       30 |
++--------------------+----------+
+
+
+**Q3: Show members with their phone numbers**
+ select name , phone from member m join member_phone mph on m.member_id = mph.member_id ;
++------------------+--------------+
+| name             | phone        |
++------------------+--------------+
+| John Smith       | 555-123-4567 |
+| Emily Johnson    | 555-987-6543 |
+| Michael Brown    | 555-234-5678 |
+| Sarah Davis      | 555-876-5432 |
+| David Wilson     | 555-345-6789 |
+| Jennifer Miller  | 555-765-4321 |
+| Robert Taylor    | 555-456-7890 |
+| Jessica Anderson | 555-654-3210 |
+| William Thomas   | 555-567-8901 |
+| Amanda Martinez  | 555-543-2109 |
+| Daniel Jackson   | 555-678-9012 |
+| Lisa White       | 555-432-1098 |
++------------------+--------------+
+
+
+**Q4: List members by birth date (oldest first)**
+select name , date from member order by date ;
++------------------+------------+
+| name             | date       |
++------------------+------------+
+| Emily Johnson    | 1985-08-22 |
+| Lisa White       | 1986-10-15 |
+| Robert Taylor    | 1987-09-12 |
+| Sarah Davis      | 1988-11-30 |
+| William Thomas   | 1989-04-17 |
+| John Smith       | 1990-05-15 |
+| Jennifer Miller  | 1991-02-25 |
+| Michael Brown    | 1992-03-10 |
+| Jessica Anderson | 1993-06-08 |
+| Amanda Martinez  | 1994-01-20 |
+| David Wilson     | 1995-07-18 |
+| Daniel Jackson   | 1996-12-05 |
++------------------+------------+
+
+
+
+**Q5:What is the average capacity of all classes?**
+select avg(capacity) as average_capacity from class ;
++------------------+
+| average_capacity |
++------------------+
+|          15.3333 |
++------------------+
+
+
+**Q6:How many members does each membership type have?**
+ select type ,count(*) as number_of_members from membership group by type ;
++----------+-------------------+
+| type     | number_of_members |
++----------+-------------------+
+| Premium  |                 4 |
+| Standard |                 4 |
+| Student  |                 4 |
++----------+-------------------+
+
+
+**Q7: How many classes has each trainer taught?**
+select staff.name , count(class_id) from staff join class on staff.staff_id = class.trainer_id group by name order by count(class_id) desc ;
++-------------------+-----------------+
+| name              | count(class_id) |
++-------------------+-----------------+
+| James Wilson      |               1 |
+| Patricia Moore    |               1 |
+| Richard Lee       |               1 |
+| Linda Clark       |               1 |
+| Charles Young     |               1 |
+| Barbara Hall      |               1 |
+| Joseph Allen      |               1 |
+| Margaret Scott    |               1 |
+| Thomas King       |               1 |
+| Susan Green       |               1 |
+| Christopher Baker |               1 |
+| Dorothy Adams     |               1 |
++-------------------+-----------------+
